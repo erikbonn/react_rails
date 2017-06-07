@@ -8,7 +8,7 @@ var Body = React.createClass({
 	},
 
 	handleSubmit(item) {
-		var newState = this.state.items.concat(item);
+		var newState = [item].concat(this.state.items);
 		this.setState({ items: newState })
 	},
 

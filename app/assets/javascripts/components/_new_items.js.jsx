@@ -1,7 +1,8 @@
-var newItem= React.createClass({
-	handleClick() {
-		var name = this.refs.name.value;
-		var description = this.refs.description.value;
+var NewItem= React.createClass({
+	handleSubmit(event) {
+		event.preventDefault()
+		var name = $("#name").val();
+		var description = $("#description").val();
 
 		$.ajax({
 			url: '/api/v1/items',
@@ -16,10 +17,11 @@ var newItem= React.createClass({
 	render() {
 	return (
 		<div>
-
-			<input ref='name' placeholder='Enter the name of the item' />
-			<input ref='description' placeholder='Enter a description' />
-			<button onClick={this.handleClick}>Submit</button>
+			<form onSubmit={this.handleSubmit}>
+				<input id="name" placeholder='Enter the name of the item' />
+				<input id="description" placeholder='Enter a description' />
+				<input type='submit' ></input>
+			</form>
 		</div>
 		)
 	}

@@ -5,7 +5,7 @@ var AllItems = React.createClass({
 	},
 
 	render () {
-		var items= this.state.items.map((item) => {
+		var items= this.props.items.map((item) => {
 			return (
 				<div key={item.id}>
 					<h3>{item.name}</h3>
